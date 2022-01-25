@@ -1,0 +1,17 @@
+//Function to find the lowest common ancestor in a binary tree
+//n1 and n2 are node values
+Node* lca(Node* root ,int n1 ,int n2 )
+    {
+       if(!root)
+         return NULL;
+       if(root->data==n1 or root->data==n2)
+         return root;
+       Node* l=lca(root->left,n1,n2);
+       Node* r=lca(root->right,n1,n2);
+       if(l and r )
+         return root;
+       if(l)
+        return l;
+       if(r)
+         return r;
+    }
