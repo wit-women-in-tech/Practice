@@ -1,0 +1,29 @@
+//function to find average of each level in BST
+//The function takes the root node and return a vector .
+vector<double> averageOfLevels(TreeNode* root) {
+        vector<double>ans;
+        if(root==NULL){
+            return ans;
+        }
+        queue<TreeNode*>q;
+        q.push(root);
+        while(!q.empty()){
+            int s=q.size();
+            double sum=0;
+            double c=0;
+            while(s--){
+                TreeNode* node=q.front();
+                q.pop();
+                c++;
+                sum += node->val;
+                if(node->left){
+                    q.push(node->left);
+                }
+                if(node->right){
+                    q.push(node->right);
+                }
+            }
+           ans.push_back(sum/c);
+        }
+        return ans;
+    }
