@@ -1,0 +1,35 @@
+void twoStacks :: push1(int x)
+{
+   if(top1+size-top2<size)
+   {
+       arr[++top1]=x;
+   }
+   return;
+}
+   
+//Function to push an integer into the stack2.
+void twoStacks ::push2(int x)
+{
+   if(top1+size-top2<size)
+   {
+       arr[--top2]=x;
+   }
+   return;
+}
+   
+//Function to remove an element from top of the stack1.
+int twoStacks ::pop1()
+{
+   if(top1!=-1)
+   {
+       return arr[top1--];
+   }
+   return -1;
+}
+
+//Function to remove an element from top of the stack2.
+int twoStacks :: pop2()
+{
+   if(top2!=size) return arr[top2++];
+   return -1;
+}
